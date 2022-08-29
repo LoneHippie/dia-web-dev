@@ -1,0 +1,24 @@
+@import "../../../../styles/variables";
+
+.nav {
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.nav_list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+
+    &_item {
+        margin: 1rem;
+
+        & > * {
+            color: $primary-white;
+            font-size: 2.4rem;
+            text-transform: uppercase;
+        }
+    }
+}

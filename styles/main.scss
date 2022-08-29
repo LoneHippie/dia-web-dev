@@ -1,0 +1,40 @@
+@import 'variables';
+@import 'mediaqueries';
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Roboto:wght@300;500;700&display=swap');
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+
+    @include respond(tablet) {
+        font-size: 65%;
+    }
+    @include respond(laptop) {
+        font-size: 68.5%;
+    }
+    @include respond(desktop) {
+        font-size: 71.5%;
+    }
+
+    scroll-behavior: smooth;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: $font-secondary;
+    
+    background: $primary-gray;
+    color: $primary-black;
+
+    font-size: $default-font-size;
+}
