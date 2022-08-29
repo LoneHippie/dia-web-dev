@@ -1,9 +1,8 @@
 import type { GetStaticProps } from 'next'
-import getContentfulData from '@utils/api/contentfulQuery';
-import { allPostsQuery } from '@utils/api/contentQueries';
-import { Post } from '@utils/api/types';
-import { Layout } from '../components/utils';
-import { HeroTitle } from '../components/typography';
+import getContentfulData, { queries } from '@utils/api/contentfulQuery';
+import type { Post } from '@utils/api/types';
+import { Layout } from '@components/utils';
+import { HeroTitle } from '@components/typography';
 
 interface HomeProps {
   posts: Post[];
@@ -30,7 +29,7 @@ const Home = ({posts}: HomeProps) => {
 }
 
 export const getStaticProps: GetStaticProps = async() => {
-  const allPosts: Post[] = await getContentfulData({ query: allPostsQuery() })
+  const allPosts: Post[] = await getContentfulData({ query: queries.allPostsQuery() })
 
   return {
     props: {

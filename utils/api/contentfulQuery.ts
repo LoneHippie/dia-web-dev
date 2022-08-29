@@ -1,4 +1,6 @@
 import { GetContentfulData } from "./types";
+import * as queries from "./contentQueries" 
+
 
 const space = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID;
 const accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
@@ -26,3 +28,5 @@ const getContentfulData: GetContentfulData = async ({query}) => {
 } 
 
 export default getContentfulData;
+
+export { queries };
