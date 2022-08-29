@@ -1,5 +1,5 @@
 import { useMemo } from "react"
-import useWindowDimensions from "../../hooks/useWindowDimensions"
+import { useWindowDimensions } from "@utils/hooks"
 import { BasePath } from "./types"
 
 const useNavBar = () => {

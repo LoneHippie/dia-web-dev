@@ -1,6 +1,5 @@
 import React from 'react'
-import Header from '../Header';
-import { HeaderProps } from '../Header/Header';
+import Header, { HeaderProps } from '../Header/Header';
 
 import classes from "./Layout.module.scss";
 

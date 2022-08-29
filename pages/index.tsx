@@ -1,10 +1,9 @@
 import type { GetStaticProps } from 'next'
-import Head from 'next/head'
-import getContentfulData from '../api/contentfulQuery';
-import { allPostsQuery } from '../api/contentQueries';
-import { Post } from '../api/types';
-import { Layout } from '../components';
-import { HeroTitle } from '../components/Typography';
+import getContentfulData from '@utils/api/contentfulQuery';
+import { allPostsQuery } from '@utils/api/contentQueries';
+import { Post } from '@utils/api/types';
+import { Layout } from '../components/utils';
+import { HeroTitle } from '../components/typography';
 
 interface HomeProps {
   posts: Post[];
