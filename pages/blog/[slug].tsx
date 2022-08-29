@@ -1,9 +1,5 @@
-import React from 'react'
-import { PostAttributes } from '../../types/blogTypes';
+import React from 'react';
 
-interface BlogPostProps {
-    post: PostAttributes;
-}
 
 const BlogPost = () => {
   return (

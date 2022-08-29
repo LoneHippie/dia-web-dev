@@ -5,17 +5,14 @@ import { allPostsQuery } from '../api/contentQueries';
 import { Post } from '../api/types';
 import { Layout } from '../components';
 import { HeroTitle } from '../components/Typography';
-import { PostData } from '../types/blogTypes'
 
 interface HomeProps {
   posts: Post[];
 }
 
 const Home = ({posts}: HomeProps) => {
-  console.log({posts})
   return (
-    <Layout 
-      heroImage='https://images-cdn.brightedge.com/f00000000036389/videos.brightedge.com/Images/b2b-tech-search-insights.jpg'
+    <Layout
       HeroTextComponent={() => (
         <HeroTitle 
           h1={"DIA Web Dev"}

@@ -9,11 +9,10 @@ interface Props extends HeaderProps {
     className?: string;
 }
 
-const Layout = ({children, className, heroImage, HeroTextComponent}: Props) => {
+const Layout = ({children, className, HeroTextComponent}: Props) => {
   return (
     <>
-        <Header 
-          heroImage={heroImage}
+        <Header
           HeroTextComponent={HeroTextComponent}
         />
         <main className={`${classes.layout} ${className}`}>
