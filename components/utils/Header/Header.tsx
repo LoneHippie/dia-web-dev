@@ -9,14 +9,21 @@ export interface HeaderProps {
 
 const Header = ({ HeroTextComponent }: HeaderProps) => {
   return (
-    <section className={classes.header__container}>
-        <Navbar />
-        <header className={classes.header}>
-            <div className={classes.header__content}>
-                <HeroTextComponent />
-            </div>
-        </header>
-    </section>
+    <>
+      <div className={classes.headerBackground}>
+        <div className={classes.headerBackground__container}>
+          <img 
+            src={"/static/bg-clip-mobile.svg"}
+          />
+        </div>
+      </div>
+      <header className={classes.header}>
+          <Navbar />
+          <div className={classes.header__content}>
+              <HeroTextComponent />
+          </div>
+      </header>
+    </>
   )
 }
 

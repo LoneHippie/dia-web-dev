@@ -16,6 +16,7 @@ export interface Post {
     coverImage: {
         url: string;
     }
+    cardPreviewText: string;
 }
 
 export interface ContentfulData {

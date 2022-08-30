@@ -3,6 +3,7 @@ import getContentfulData, { queries } from '@utils/api/contentfulQuery';
 import type { Post } from '@utils/api/types';
 import { Layout } from '@components/utils';
 import { HeroTitle } from '@components/typography';
+import PostCardFeatured from '@components/cards/PostCardFeatured';
 
 interface HomeProps {
   posts: Post[];
@@ -18,12 +19,9 @@ const Home = ({posts}: HomeProps) => {
         />
       )}
     >
-      <p>asdjkhask djaskd jahskdjhaskdj ahskdjaksdjhaskd jaskdj askdjhas kjd asd</p>
-      <p>asdjkhask djaskd jahskdjhaskdj ahskdjaksdjhaskd jaskdj askdjhas kjd asd</p>
-      <p>asdjkhask djaskd jahskdjhaskdj ahskdjaksdjhaskd jaskdj askdjhas kjd asd</p>
-      <p>asdjkhask djaskd jahskdjhaskdj ahskdjaksdjhaskd jaskdj askdjhas kjd asd</p>
-      <p>asdjkhask djaskd jahskdjhaskdj ahskdjaksdjhaskd jaskdj askdjhas kjd asd</p>
-      <p>asdjkhask djaskd jahskdjhaskdj ahskdjaksdjhaskd jaskdj askdjhas kjd asd</p>
+     <PostCardFeatured 
+      post={posts[0]}
+     />
     </Layout>
   )
 }
