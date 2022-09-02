@@ -19,9 +19,9 @@ const Home = ({posts}: HomeProps) => {
         />
       )}
     >
-     <PostCardFeatured 
+     {/* <PostCardFeatured 
       post={posts[0]}
-     />
+     /> */}
     </Layout>
   )
 }

@@ -1,3 +1,6 @@
+
+import BackgroundBottomClip from '@components/svgs/shapes';
+import { useWindowDimensions } from '@utils/hooks';
 import React from 'react'
 import Navbar from '../Navbar';
 
@@ -8,13 +11,18 @@ export interface HeaderProps {
 }
 
 const Header = ({ HeroTextComponent }: HeaderProps) => {
+
+  const { screenSize } = useWindowDimensions()
+
   return (
     <>
       <div className={classes.headerBackground}>
         <div className={classes.headerBackground__container}>
-          <img 
-            src={"/static/bg-clip-mobile.svg"}
-          />
+          <div className={classes.headerBackground__container__clip}>
+            <BackgroundBottomClip
+              size={screenSize}
+            />
+          </div>
         </div>
       </div>
       <header className={classes.header}>

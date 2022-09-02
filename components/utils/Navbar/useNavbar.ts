@@ -1,11 +1,11 @@
 import { useMemo } from "react"
-import { useWindowDimensions } from "@utils/hooks"
+import useWindowDimensions, { ScreenSize } from "@utils/hooks/useWindowDimensions"
 import { BasePath } from "./types"
 
 const useNavBar = () => {
-    const { screenWidth } = useWindowDimensions()
+    const { screenSize } = useWindowDimensions()
 
-    const isMobile = useMemo(() => !!screenWidth && screenWidth <= 780 ,[screenWidth])
+    const isMobile = useMemo(() => screenSize === ScreenSize.mobile ,[screenSize])
 
     const basePaths: BasePath[] = [
         {
