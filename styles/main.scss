@@ -29,6 +29,14 @@ html {
     -webkit-text-size-adjust: 100%;
 }
 
+:root {
+    --layout-padding: 5%;
+
+    @include respond(tablet) {
+        --layout-padding: 10%;
+    }
+}
+
 body {
     box-sizing: border-box;
     font-family: $font-secondary;

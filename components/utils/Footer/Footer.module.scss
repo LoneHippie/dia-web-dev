@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: column;
 
-    padding: 3rem;
+    padding: 3rem var(--layout-padding);
 
     background: linear-gradient(to top left,
         $primary-dark,
