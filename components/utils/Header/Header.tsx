@@ -1,18 +1,25 @@
 
 import BackgroundBottomClip from '@components/svgs/shapes';
-import { useWindowDimensions } from '@utils/hooks';
+import { ScreenSize } from '@utils/hooks/useWindowDimensions';
 import React from 'react'
+import { BasePath } from '../Layout/types';
 import Navbar from '../Navbar';
 
 import classes from "./Header.module.scss"
 
 export interface HeaderProps {
     HeroTextComponent: () => JSX.Element;
+    screenSize: ScreenSize;
+    isMobile: boolean;
+    basePaths: BasePath[];
 }
 
-const Header = ({ HeroTextComponent }: HeaderProps) => {
-
-  const { screenSize } = useWindowDimensions()
+const Header = ({
+   HeroTextComponent, 
+   screenSize, 
+   isMobile, 
+   basePaths 
+}: HeaderProps) => {
 
   return (
     <>
@@ -26,7 +33,7 @@ const Header = ({ HeroTextComponent }: HeaderProps) => {
         </div>
       </div>
       <header className={classes.header}>
-          <Navbar />
+          <Navbar basePaths={basePaths} isMobile={isMobile} />
           <div className={classes.header__content}>
               <HeroTextComponent />
           </div>

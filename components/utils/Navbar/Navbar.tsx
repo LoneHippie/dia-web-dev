@@ -5,11 +5,14 @@ import useNavbar from './useNavbar';
 
 
 import classes from "./Navbar.module.scss";
+import { BasePath } from '../Layout/types';
 
+interface Props {
+    isMobile: boolean;
+    basePaths: BasePath[];
+}
 
-const Navbar = () => {
-
-    const { isMobile, basePaths } = useNavbar()
+const Navbar = ({ isMobile, basePaths }: Props) => {
 
     return (
         <div className={classes.nav}>

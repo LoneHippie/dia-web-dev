@@ -19,9 +19,10 @@ const Home = ({posts}: HomeProps) => {
         />
       )}
     >
-     {/* <PostCardFeatured 
+     <PostCardFeatured 
       post={posts[0]}
-     /> */}
+     />
+     <p style={{fontSize: "48px"}}>as dasjd askjd asdkj alskdjl aksdlaksjd laksdjl askdj laksdj laskdjalsk djalskd jaslkdj aslkdj aslk djalskdj aslkdj alskdj alsk djalskd jaslkdjaslkd jaslkdj aslkdj aslkdj aslkdh aslkd jaslkdj aslkdj</p>
     </Layout>
   )
 }

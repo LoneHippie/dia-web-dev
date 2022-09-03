@@ -1,6 +1,6 @@
+import { BasePath } from '@components/utils/Layout/types';
 import Link from 'next/link'
 import React from 'react'
-import { BasePath } from '../../types';
 
 import classes from "./NavMenuSmall.module.scss";
 
