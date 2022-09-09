@@ -14,7 +14,7 @@ const fullPostContent = `
 
 const allPostsQuery = () => `
 {
-    postCollection {
+    postCollection(order: postDate_DESC) {
       posts: items {
         ${fullPostContent}
       }

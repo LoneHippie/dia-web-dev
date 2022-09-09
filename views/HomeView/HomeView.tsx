@@ -5,6 +5,7 @@ import PostCardFeatured from '@components/cards/PostCardFeatured';
 import PostCard from '@components/cards/PostCard';
 
 import classes from "./HomeView.module.scss";
+import useHomeView from './useHomeView';
 
 interface Props {
   posts: Post[];
@@ -12,8 +13,7 @@ interface Props {
 
 const HomeView = ({ posts }: Props) => {
 
-  const featuredPost = posts.filter(post => post.isFeatured)[0];
-  const sortedPosts = posts.filter(post => !post.isFeatured)
+  const { featuredPost, recentPosts } = useHomeView({ posts })
 
   return (
     <Layout
@@ -32,7 +32,7 @@ const HomeView = ({ posts }: Props) => {
       </section>
       <section className={classes.postContent__posts}>
         {
-          sortedPosts.map((post, index) => (
+          recentPosts.map((post, index) => (
             <PostCard post={post} key={`post-card-${index}`} />
           ))
         }
