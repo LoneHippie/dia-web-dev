@@ -1,4 +1,6 @@
-import getContentfulData, { queries } from "@utils/api/contentfulQuery";
+import getContentfulData, {
+  queries
+} from "@utils/api/contentfulQuery";
 import { Post, StaticPostParams } from "@utils/api/types";
 import { GetStaticPaths, GetStaticProps } from "next";
 import React from "react";
@@ -8,7 +10,9 @@ interface ArticlePostProps {
   post: Post;
 }
 
-const ArticlePost = ({ post }: ArticlePostProps) => <ArticleView post={post} />;
+const ArticlePost = ({ post }: ArticlePostProps) => (
+  <ArticleView post={post} />
+);
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts: Post[] = await getContentfulData({
@@ -20,11 +24,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths,
-    fallback: "blocking"
+    fallback: false
   };
 };
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async (
+  context
+) => {
   const { slug } = context.params as StaticPostParams;
   const posts: Post[] = await getContentfulData({
     query: queries.singlePostQuery({ slug: slug })

@@ -1,0 +1,22 @@
+@import "../../../styles/mediaqueries";
+@import "../../../styles/variables";
+
+.postContent {
+  padding: 0;
+
+  & > p {
+    margin-bottom: 3rem;
+    line-height: 2.8rem;
+    font-family: $font-secondary;
+    color: $primary-black;
+
+    & > a {
+      color: $primary-main;
+    }
+
+    & > strong {
+      color: $primary-black;
+      text-decoration: underline;
+    }
+  }
+}

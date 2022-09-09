@@ -35,6 +35,9 @@ html {
   @include respond(tablet) {
     --layout-padding: 10%;
   }
+  @include respond(laptop) {
+    --layout-padding: 12%;
+  }
 }
 
 body {
