@@ -1,6 +1,7 @@
 import { ButtonOutline } from '@components/buttons';
 import type { Post } from '@utils/api/types'
 import { useFormatDate } from '@utils/hooks';
+import Link from 'next/link';
 import React from 'react';
 
 import classes from "./PostCardFeatured.module.scss";
@@ -25,9 +26,11 @@ const PostCardFeatured = ({ post }: Props) => {
             <h3 className={classes.cardFeatured__title}>
                 {post.title}
             </h3>
-            <p className={classes.cardFeaured__preview}>{post.cardPreviewText}</p>
+            <p className={classes.cardFeatured__preview}>{post.preview}</p>
 
-            <ButtonOutline>Read More</ButtonOutline>
+            <ButtonOutline>
+                <Link href={`/articles/${post.slug}`}>Read More</Link>
+            </ButtonOutline>
         </article>
     )
 }

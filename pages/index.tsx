@@ -1,29 +1,15 @@
-import type { GetStaticProps } from 'next'
-import getContentfulData, { queries } from '@utils/api/contentfulQuery';
-import type { Post } from '@utils/api/types';
-import { Layout } from '@components/utils';
-import { HeroTitle } from '@components/typography';
-import PostCardFeatured from '@components/cards/PostCardFeatured';
+import getContentfulData, { queries } from "@utils/api/contentfulQuery";
+import { Post } from "@utils/api/types";
+import { GetStaticProps } from "next";
+import { HomeView } from "views";
 
 interface HomeProps {
   posts: Post[];
 }
 
-const Home = ({posts}: HomeProps) => {
+const Home = ({ posts }: HomeProps) => {
   return (
-    <Layout
-      HeroTextComponent={() => (
-        <HeroTitle 
-          h1={"DIA Web Dev"}
-          h2={"Web dev, tech & more"}
-        />
-      )}
-    >
-     <PostCardFeatured 
-      post={posts[0]}
-     />
-     <p style={{fontSize: "48px"}}>as dasjd askjd asdkj alskdjl aksdlaksjd laksdjl askdj laksdj laskdjalsk djalskd jaslkdj aslkdj aslk djalskdj aslkdj alskdj alsk djalskd jaslkdjaslkd jaslkdj aslkdj aslkdj aslkdh aslkd jaslkdj aslkdj</p>
-    </Layout>
+    <HomeView posts={posts} />
   )
 }
 

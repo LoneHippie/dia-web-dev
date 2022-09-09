@@ -1,12 +1,14 @@
+import { ParsedUrlQuery } from "querystring";
+
 export interface QueryString {
     query: string;
 }
 
 interface SinglePostQueryArgs {
-    slug: string;
+    slug: any;
 }
 
-export type SinglePostQuery = ({slug}: SinglePostQueryArgs) => string;
+export type SinglePostQuery = ({ slug }: SinglePostQueryArgs) => string;
 
 export interface Post {
     title: string;
@@ -16,7 +18,7 @@ export interface Post {
     coverImage: {
         url: string;
     }
-    cardPreviewText: string;
+    preview: string;
 }
 
 export interface ContentfulData {
@@ -27,4 +29,8 @@ export interface ContentfulData {
     }
 }
 
-export type GetContentfulData = ({query}: QueryString) => Promise<Post[]>
+export type GetContentfulData = ({query}: QueryString) => Promise<Post[]>;
+
+export interface StaticPostParams extends ParsedUrlQuery {
+    slug: string;
+}

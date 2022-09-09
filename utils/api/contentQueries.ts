@@ -1,16 +1,21 @@
 import { SinglePostQuery } from "./types";
 
+const fullPostContent = `
+  title
+  slug
+  postDate
+  postContent
+  preview: cardPreviewText
+  coverImage {
+    url
+  }
+`
+
 const allPostsQuery = () => `
 {
     postCollection {
       posts: items {
-        title
-        slug
-        postDate
-        postContent
-        coverImage {
-          url
-        }
+        ${fullPostContent}
       }
     }
   }
@@ -18,16 +23,10 @@ const allPostsQuery = () => `
 
 const singlePostQuery: SinglePostQuery = ({ slug }) => `
 {
-    postCollection (where: { slug: ${slug} }) {
+    postCollection (where: { slug: "${slug}" }) {
       posts: items {
-        title
-        slug
-        postDate
-        postContent
-        coverImage {
-          url
-        }
-      }s
+        ${fullPostContent}
+      }
     }
   }
 `;
