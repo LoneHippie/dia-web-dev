@@ -9,6 +9,7 @@ const fullPostContent = `
   coverImage {
     url
   }
+  isFeatured
 `
 
 const allPostsQuery = () => `

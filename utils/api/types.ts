@@ -19,6 +19,7 @@ export interface Post {
         url: string;
     }
     preview: string;
+    isFeatured: boolean;
 }
 
 export interface ContentfulData {

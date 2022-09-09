@@ -1,0 +1,65 @@
+@import "../../../styles/variables";
+@import "../../../styles/mediaqueries";
+
+.cardContainer {
+    display: block;
+    text-decoration: none;
+}
+
+.card {
+    width: 100%;
+    height: 12rem;
+    display: flex;
+    flex-direction: row;
+
+    @include respond(largePhone) {
+        height: 14rem;
+    }
+    @include respond(landscapePhone) {
+        height: 17rem;
+    }
+    @include respond(tablet) {
+        height: 16rem;
+    }
+
+    &__image {
+        width: 50%;
+        margin-right: 1rem;
+        height: 11.9rem;
+
+        @include respond(largePhone) {
+            height: 14rem;
+        }
+        @include respond(landscapePhone) {
+            height: 17rem;
+        }
+        @include respond(tablet) {
+            height: 16rem;
+        }
+    }
+
+    &__info {
+        width: 50%;
+
+        &__date {
+            color: $primary-black;
+            display: block;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+
+            @include respond(landscapePhone) {
+                font-size: 2.2rem;
+            }
+        }
+
+        &__title {
+            font-size: 2.5rem;
+            color: $primary-main;
+            line-height: 3rem;
+
+            @include respond(landscapePhone) {
+                font-size: 3rem;
+            }
+        }
+    }
+}
