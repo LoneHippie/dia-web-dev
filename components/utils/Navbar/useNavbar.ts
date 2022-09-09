@@ -1,31 +1,36 @@
-import { useMemo } from "react"
-import useWindowDimensions, { ScreenSize } from "@utils/hooks/useWindowDimensions"
-import { BasePath } from "./types"
+import { useMemo } from "react";
+import useWindowDimensions, {
+  ScreenSize
+} from "@utils/hooks/useWindowDimensions";
+import { BasePath } from "../Layout/types";
 
 const useNavBar = () => {
-    const { screenSize } = useWindowDimensions()
+  const { screenSize } = useWindowDimensions();
 
-    const isMobile = useMemo(() => screenSize === ScreenSize.mobile ,[screenSize])
+  const isMobile = useMemo(
+    () => screenSize === ScreenSize.mobile,
+    [screenSize]
+  );
 
-    const basePaths: BasePath[] = [
-        {
-            path: "/",
-            name: "Home"
-        },
-        {
-            path: "/blog",
-            name: "Articles"
-        },
-        {
-            path: "/about",
-            name: "About"
-        }
-    ]
-    
-    return {
-        isMobile,
-        basePaths
+  const basePaths: BasePath[] = [
+    {
+      path: "/",
+      name: "Home"
+    },
+    {
+      path: "/blog",
+      name: "Articles"
+    },
+    {
+      path: "/about",
+      name: "About"
     }
-}
+  ];
+
+  return {
+    isMobile,
+    basePaths
+  };
+};
 
 export default useNavBar;

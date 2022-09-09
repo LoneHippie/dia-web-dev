@@ -1,4 +1,4 @@
 export interface BasePath {
-    path: string;
-    name: string;
+  path: string;
+  name: string;
 }

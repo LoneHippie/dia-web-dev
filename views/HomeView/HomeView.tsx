@@ -39,17 +39,24 @@ const HomeView = ({ posts }: Props) => {
       </section>
      </section>
      
-      <h4 className={classes.aboutTitle}>
-        Do It All, Do It Yourself
-      </h4>
+      <section className={classes.aboutSection}>
+        <h4 className={classes.aboutSection__title}>
+          Do It All, Do It Yourself
+        </h4>
 
-      <p className={classes.aboutBodyText}>
-        This is some random filler text about waht it means to be an independant web developer and how I want to give everyone the tools they need to succeed in learning how to be a self taught dev as well as business advice career advice advice advice etc. This is going to be a fun fun project hurray!
-      </p>
+        <div className={classes.aboutSection__logoText}>
+          <img 
+            src={"/static/logo.svg"}
+          />
+          <p className={classes.aboutSection__bodyText}>
+            This is some random filler text about waht it means to be an independant web developer and how I want to give everyone the tools they need to succeed in learning how to be a self taught dev as well as business advice career advice advice advice etc. This is going to be a fun fun project hurray!
+          </p>
+        </div>
 
-      <p className={classes.aboutBodyText}>
-        This is some random filler text about waht it means to be an independant web developer and how I want to give everyone the tools they need to succeed in learning how to be a self taught dev as well as business advice career advice advice advice etc. This is going to be a fun fun project hurray!
-      </p>
+        <p className={classes.aboutSection__bodyText}>
+          This is some random filler text about waht it means to be an independant web developer and how I want to give everyone the tools they need to succeed in learning how to be a self taught dev as well as business advice career advice advice advice etc. This is going to be a fun fun project hurray!
+        </p>
+      </section>
 
     </Layout>
   )

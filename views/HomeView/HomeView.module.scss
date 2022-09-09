@@ -43,17 +43,44 @@
     }
 }
 
-.aboutTitle {
-    font-size: 3.5rem;
-    font-family: $font-main;
-    color: $primary-main;
-    margin-bottom: 4rem;
-    line-height: 3.6rem;
-}
+.aboutSection {
+    height: 100%;
+    margin-bottom: 5rem;
 
-.aboutBodyText {
-    font-size: 2.6rem;
-    font-family: $font-secondary;
-    color: $primary-black;
-    margin-bottom: 2.5rem;
+    &__title {
+        font-size: 3.5rem;
+        font-family: $font-main;
+        color: $primary-main;
+        margin-bottom: 4rem;
+        line-height: 3.6rem;
+    }
+
+    &__bodyText {
+        font-size: 2.6rem;
+        font-family: $font-secondary;
+        color: $primary-black;
+        margin-bottom: 2.5rem;
+    }
+
+    &__logoText {
+        display: flex;
+        flex-direction: column-reverse;
+
+        @include respond(landscapePhone) {
+            display: block;
+        }
+
+        & > img {
+            display: block;
+            height: 12rem;
+            width: 12rem;
+            margin: 0 auto;
+            margin-bottom: 2.5rem;
+
+            @include respond(landscapePhone) {
+                margin: 0;
+                float: right;
+            }
+        }
+    }
 }

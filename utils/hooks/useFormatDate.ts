@@ -1,15 +1,15 @@
-import React from 'react'
-import { useMemo } from 'react'
+import React from "react";
+import { useMemo } from "react";
 
 const useFormatDate = (date: string) => {
-    const formattedDate = useMemo(() => {
-        const format = new Date(date)
-        return format.toDateString().slice(4)
-    }, [date])
+  const formattedDate = useMemo(() => {
+    const format = new Date(date);
+    return format.toDateString().slice(4);
+  }, [date]);
 
-    return {
-        formattedDate
-    }
-}
+  return {
+    formattedDate
+  };
+};
 
-export default useFormatDate
+export default useFormatDate;

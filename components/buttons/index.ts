@@ -1,5 +1,3 @@
 import ButtonOutline from "./ButtonOutline";
 
-export {
-    ButtonOutline
-}
+export { ButtonOutline };

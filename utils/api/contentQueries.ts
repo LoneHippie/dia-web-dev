@@ -10,7 +10,7 @@ const fullPostContent = `
     url
   }
   isFeatured
-`
+`;
 
 const allPostsQuery = () => `
 {
@@ -32,4 +32,4 @@ const singlePostQuery: SinglePostQuery = ({ slug }) => `
   }
 `;
 
-export { allPostsQuery, singlePostQuery }
+export { allPostsQuery, singlePostQuery };

@@ -1,18 +1,18 @@
 @import "../../../styles/variables";
 
 .buttonOutline {
-    border: 2px solid $primary-main;
+  border: 2px solid $primary-main;
+  color: $primary-main;
+  font-family: $font-secondary;
+  font-size: 2rem;
+  border-radius: 8px;
+  padding: 0.5rem 1.5rem;
+  width: fit-content;
+  background: none;
+
+  & > * {
     color: $primary-main;
     font-family: $font-secondary;
-    font-size: 2rem;
-    border-radius: 8px;
-    padding: 0.5rem 1.5rem;
-    width: fit-content;
-    background: none;
-
-    & > * {
-        color: $primary-main;
-        font-family: $font-secondary;
-        text-decoration: none;
-    }
+    text-decoration: none;
+  }
 }

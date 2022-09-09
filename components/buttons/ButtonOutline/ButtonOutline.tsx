@@ -1,17 +1,13 @@
-import React from 'react'
+import React from "react";
 
 import classes from "./ButtonOutline.module.scss";
 
 interface Props {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }
 
 const ButtonOutline = ({ children }: Props) => {
-  return (
-    <button className={classes.buttonOutline}>
-        {children}
-    </button>
-  )
-}
+  return <button className={classes.buttonOutline}>{children}</button>;
+};
 
-export default ButtonOutline
+export default ButtonOutline;
