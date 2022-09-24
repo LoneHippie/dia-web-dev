@@ -1,5 +1,6 @@
 import React from "react";
-import showdown from "showdown";
+import ReactMarkdown from "react-markdown";
+import CodeBlock from "../CodeBlock";
 
 import classes from "./PostContent.module.scss";
 
@@ -8,13 +9,17 @@ interface Props {
 }
 
 const PostContent = ({ markdown }: Props) => {
-  const converter = new showdown.Converter();
-  const HTML = converter.makeHtml(markdown);
-
   return (
-    <div
+    <ReactMarkdown
       className={classes.postContent}
-      dangerouslySetInnerHTML={{ __html: HTML }}
+      children={markdown}
+      components={{
+        code: ({ children }) => (
+          <CodeBlock>
+            {String(children).replace(/\n$/, "")}
+          </CodeBlock>
+        )
+      }}
     />
   );
 };
