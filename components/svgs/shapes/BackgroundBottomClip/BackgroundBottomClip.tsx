@@ -15,20 +15,11 @@ const BackgroundBottomClip = ({
 }: Props) => {
   const svgSize = useMemo(() => {
     if (size === ScreenSize.mobile) {
-      return {
-        height: "58",
-        path: "58H0L271 0V58Z"
-      };
+      return "58";
     } else if (size === ScreenSize.tablet) {
-      return {
-        height: "39",
-        path: "39H0L271 0V39Z"
-      };
+      return "39";
     } else {
-      return {
-        height: "18",
-        path: "18H0L271 0V18Z"
-      };
+      return "16";
     }
   }, [size]);
 
@@ -36,13 +27,13 @@ const BackgroundBottomClip = ({
     <svg
       className={classes.bg_clip}
       width="271"
-      height={svgSize.height}
-      viewBox={`0 0 271 ${svgSize.height}`}
+      height={svgSize}
+      viewBox={`0 0 271 ${svgSize}`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d={`M271 ${svgSize.path}`}
+        d={`M271 ${svgSize}H0L271 0V${svgSize}Z`}
         fill={isDark ? "#202020" : "#FFFFFF"}
       />
     </svg>
