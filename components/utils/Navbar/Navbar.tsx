@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import { NavMenuExpanded, NavMenuSmall } from "./components";
-import useNavbar from "./useNavbar";
 
 import classes from "./Navbar.module.scss";
 import { BasePath } from "../Layout/types";

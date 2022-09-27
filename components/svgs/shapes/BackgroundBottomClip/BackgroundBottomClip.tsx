@@ -1,6 +1,5 @@
 import { ScreenSize } from "@utils/hooks/useWindowDimensions";
-import React from "react";
-import { useMemo } from "react";
+import React, { useMemo } from "react";
 
 import classes from "./BackgroundBottomClip.module.scss";
 
