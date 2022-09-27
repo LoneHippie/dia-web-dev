@@ -14,11 +14,21 @@ const PostContent = ({ markdown }: Props) => {
       className={classes.postContent}
       children={markdown}
       components={{
-        code: ({ children }) => (
-          <CodeBlock>
-            {String(children).replace(/\n$/, "")}
-          </CodeBlock>
-        )
+        code: ({ children }) => {
+          let code = String(children);
+          const language = code
+            .split("~~~~~")[1]
+            .split("~~~~~")[0];
+          code = code.replaceAll("~~~~~", "");
+          code = code.replace(language, "");
+
+          return (
+            <CodeBlock
+              language={language}
+              codeString={code.replace(/\n$/, "")}
+            />
+          );
+        }
       }}
     />
   );
