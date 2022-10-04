@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useMemo } from "react";
+import { useTheme } from "contexts/themeContext";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 
 import typescript from "react-syntax-highlighter/dist/cjs/languages/prism/typescript";
@@ -9,7 +10,8 @@ import scss from "react-syntax-highlighter/dist/cjs/languages/prism/scss";
 import css from "react-syntax-highlighter/dist/cjs/languages/prism/css";
 import bash from "react-syntax-highlighter/dist/cjs/languages/prism/bash";
 
-import a11yDark from "react-syntax-highlighter/dist/cjs/styles/prism/a11y-dark";
+import materialDark from "react-syntax-highlighter/dist/cjs/styles/prism/material-dark";
+import materialLight from "react-syntax-highlighter/dist/cjs/styles/prism/material-light";
 
 SyntaxHighlighter.registerLanguage("typescript", typescript);
 SyntaxHighlighter.registerLanguage("javascript", javascript);
@@ -25,8 +27,15 @@ interface Props {
 }
 
 const CodeBlock = ({ codeString, language }: Props) => {
+  const { isDark } = useTheme();
+
+  const codeStyle = useMemo(
+    () => (isDark ? materialDark : materialLight),
+    [isDark]
+  );
+
   return (
-    <SyntaxHighlighter language={language} style={a11yDark}>
+    <SyntaxHighlighter language={language} style={codeStyle}>
       {codeString}
     </SyntaxHighlighter>
   );

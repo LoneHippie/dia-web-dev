@@ -1,5 +1,6 @@
 import { useWindowDimensions } from "@utils/hooks";
 import { ScreenSize } from "@utils/hooks/useWindowDimensions";
+import { Themes, useTheme } from "contexts/themeContext";
 import { useMemo } from "react";
 import { BasePath } from "./types";
 

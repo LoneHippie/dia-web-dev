@@ -9,13 +9,17 @@ import classes from "./Footer.module.scss";
 interface Props {
   screenSize: ScreenSize;
   basePaths: BasePath[];
+  isDark: boolean;
 }
 
-const Footer = ({ screenSize, basePaths }: Props) => {
+const Footer = ({ screenSize, basePaths, isDark }: Props) => {
   return (
     <footer className={classes.footer}>
       <div className={classes.footer__bg}>
-        <BackgroundBottomClip size={screenSize} />
+        <BackgroundBottomClip
+          size={screenSize}
+          isDark={isDark}
+        />
       </div>
       <section className={classes.footer__body}>
         <div className={classes.footer__nav}>

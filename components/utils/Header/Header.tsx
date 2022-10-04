@@ -10,6 +10,7 @@ export interface HeaderProps {
   HeroTextComponent: () => JSX.Element;
   screenSize: ScreenSize;
   isMobile: boolean;
+  isDark: boolean;
   basePaths: BasePath[];
 }
 
@@ -17,6 +18,7 @@ const Header = ({
   HeroTextComponent,
   screenSize,
   isMobile,
+  isDark,
   basePaths
 }: HeaderProps) => {
   return (
@@ -26,7 +28,10 @@ const Header = ({
           <div
             className={classes.headerBackground__container__clip}
           >
-            <BackgroundBottomClip size={screenSize} />
+            <BackgroundBottomClip
+              size={screenSize}
+              isDark={isDark}
+            />
           </div>
         </div>
       </div>
