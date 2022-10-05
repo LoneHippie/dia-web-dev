@@ -1,16 +1,14 @@
 import { Post } from "@utils/api/types";
 import { useFormatDate } from "@utils/hooks";
-import Link from "next/link";
 import React from "react";
 
 import classes from "./PostCard.module.scss";
 
 interface Props {
   post: Post;
-  isHeaderClash?: boolean;
 }
 
-const PostCard = ({ post, isHeaderClash = false }: Props) => {
+const PostCard = ({ post }: Props) => {
   const { formattedDate } = useFormatDate(post.postDate);
 
   return (
@@ -24,16 +22,10 @@ const PostCard = ({ post, isHeaderClash = false }: Props) => {
           src={post.coverImage.url}
         />
         <div className={classes.card__info}>
-          <span
-            className={classes.card__info__date}
-            style={isHeaderClash ? { color: "#e1e1e1" } : {}}
-          >
+          <span className={classes.card__info__date}>
             {formattedDate}
           </span>
-          <h3
-            className={classes.card__info__title}
-            style={isHeaderClash ? { color: "#ffffff" } : {}}
-          >
+          <h3 className={classes.card__info__title}>
             {post.title}
           </h3>
         </div>

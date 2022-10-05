@@ -7,7 +7,6 @@ import PostCard from "@components/cards/PostCard";
 import classes from "./HomeView.module.scss";
 import useHomeView from "./useHomeView";
 import { useWindowDimensions } from "@utils/hooks";
-import { ScreenSize } from "@utils/hooks/useWindowDimensions";
 
 interface Props {
   posts: Post[];
@@ -32,13 +31,7 @@ const HomeView = ({ posts }: Props) => {
         </section>
         <section className={classes.postContent__posts}>
           {recentPosts.map((post, index) => (
-            <PostCard
-              post={post}
-              key={`post-card-${index}`}
-              isHeaderClash={
-                screenSize !== ScreenSize.mobile && index === 0
-              }
-            />
+            <PostCard post={post} key={`post-card-${index}`} />
           ))}
         </section>
       </section>

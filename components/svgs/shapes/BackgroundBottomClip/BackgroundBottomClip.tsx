@@ -5,13 +5,10 @@ import classes from "./BackgroundBottomClip.module.scss";
 
 interface Props {
   size: ScreenSize;
-  isDark?: boolean;
+  isDark: boolean;
 }
 
-const BackgroundBottomClip = ({
-  size,
-  isDark = false
-}: Props) => {
+const BackgroundBottomClip = ({ size, isDark }: Props) => {
   const svgSize = useMemo(() => {
     if (size === ScreenSize.mobile) {
       return "58";
@@ -21,6 +18,11 @@ const BackgroundBottomClip = ({
       return "16";
     }
   }, [size]);
+
+  const fill = useMemo(
+    () => (isDark ? "#202020" : "#FFFFFF"),
+    [isDark]
+  );
 
   return (
     <svg
@@ -33,7 +35,7 @@ const BackgroundBottomClip = ({
     >
       <path
         d={`M271 ${svgSize}H0L271 0V${svgSize}Z`}
-        fill={isDark ? "#202020" : "#FFFFFF"}
+        fill={fill}
       />
     </svg>
   );

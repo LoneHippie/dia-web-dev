@@ -4,6 +4,7 @@ import { NavMenuExpanded, NavMenuSmall } from "./components";
 
 import classes from "./Navbar.module.scss";
 import { BasePath } from "../Layout/types";
+import Toggle from "@components/inputs";
 
 interface Props {
   isMobile: boolean;
@@ -13,13 +14,16 @@ interface Props {
 const Navbar = ({ isMobile, basePaths }: Props) => {
   return (
     <div className={classes.nav}>
-      <Link href="/">
-        <img
-          src={"/static/logo-white.svg"}
-          className={classes.nav_logo}
-          alt="Back to home page"
-        />
-      </Link>
+      <div className={classes.nav__main}>
+        <Link href="/">
+          <img
+            src={"/static/logo-white.svg"}
+            className={classes.nav__main__logo}
+            alt="Back to home page"
+          />
+        </Link>
+        <Toggle />
+      </div>
 
       {isMobile ? (
         <NavMenuSmall basePaths={basePaths} />

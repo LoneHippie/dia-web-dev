@@ -1,3 +1,4 @@
+import Toggle from "@components/inputs";
 import BackgroundBottomClip from "@components/svgs/shapes";
 import { ScreenSize } from "@utils/hooks/useWindowDimensions";
 import Link from "next/link";
@@ -36,6 +37,7 @@ const Footer = ({ screenSize, basePaths, isDark }: Props) => {
         </div>
         <div className={classes.footer__display}>
           <img src={"/static/logo-white.svg"} />
+          <Toggle />
         </div>
       </section>
       <div className={classes.footer__credits}>

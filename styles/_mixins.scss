@@ -1,0 +1,6 @@
+@mixin stroke($color, $size) {
+  text-shadow: -#{$size} -#{$size} 0 $color, 0 -#{$size} 0 $color,
+    #{$size} -#{$size} 0 $color, #{$size} 0 0 $color,
+    #{$size} #{$size} 0 $color, 0 #{$size} 0 $color,
+    -#{$size} #{$size} 0 $color, -#{$size} 0 0 $color;
+}
