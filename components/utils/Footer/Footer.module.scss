@@ -86,6 +86,8 @@
     height: 12rem;
     width: 12rem;
 
+    cursor: pointer;
+
     @include respond(tablet) {
       height: 16rem;
       width: 16rem;

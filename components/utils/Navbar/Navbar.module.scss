@@ -24,8 +24,9 @@
     &__logo {
       height: 7.5rem;
       width: 9rem;
-
       margin-bottom: 0.5rem;
+
+      cursor: pointer;
 
       @include respond(laptop) {
         height: 8rem;

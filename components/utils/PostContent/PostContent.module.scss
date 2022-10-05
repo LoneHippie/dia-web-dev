@@ -4,6 +4,8 @@
 .postContent {
   padding: 0;
 
+  transform: translate(0);
+
   & > p {
     padding-bottom: 3rem;
     line-height: 2.8rem;
