@@ -10,8 +10,10 @@ import scss from "react-syntax-highlighter/dist/cjs/languages/prism/scss";
 import css from "react-syntax-highlighter/dist/cjs/languages/prism/css";
 import bash from "react-syntax-highlighter/dist/cjs/languages/prism/bash";
 
-import materialDark from "react-syntax-highlighter/dist/cjs/styles/prism/material-dark";
-import materialLight from "react-syntax-highlighter/dist/cjs/styles/prism/material-light";
+// @ts-expect-error
+import themeDark from "react-syntax-highlighter/dist/cjs/styles/prism/one-dark";
+// @ts-expect-error
+import themeLight from "react-syntax-highlighter/dist/cjs/styles/prism/one-light";
 
 SyntaxHighlighter.registerLanguage("typescript", typescript);
 SyntaxHighlighter.registerLanguage("javascript", javascript);
@@ -30,12 +32,17 @@ const CodeBlock = ({ codeString, language }: Props) => {
   const { isDark } = useTheme();
 
   const codeStyle = useMemo(
-    () => (isDark ? materialDark : materialLight),
+    () => (isDark ? themeDark : themeLight),
     [isDark]
   );
 
   return (
-    <SyntaxHighlighter language={language} style={codeStyle}>
+    <SyntaxHighlighter
+      language={language}
+      style={codeStyle}
+      customStyle={{ fontSize: "1.5rem" }}
+      showLineNumbers
+    >
       {codeString}
     </SyntaxHighlighter>
   );

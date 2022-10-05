@@ -14,7 +14,6 @@ interface Props {
 
 const HomeView = ({ posts }: Props) => {
   const { featuredPost, recentPosts } = useHomeView({ posts });
-  const { screenSize } = useWindowDimensions();
 
   return (
     <Layout

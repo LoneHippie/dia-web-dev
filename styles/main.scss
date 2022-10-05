@@ -36,7 +36,10 @@ html {
     --layout-padding: 10%;
   }
   @include respond(laptop) {
-    --layout-padding: 12%;
+    --layout-padding: 15%;
+  }
+  @include respond(desktop) {
+    --layout-padding: 17.5%;
   }
 }
 
