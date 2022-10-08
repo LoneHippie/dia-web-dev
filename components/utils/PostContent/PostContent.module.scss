@@ -6,6 +6,11 @@
 
   transform: translate(0);
 
+  & > h2 {
+    color: $primary-main;
+    padding-bottom: 3rem;
+  }
+
   & > p {
     padding-bottom: 3rem;
     line-height: 2.8rem;
@@ -17,7 +22,6 @@
     }
 
     & > strong {
-      color: var(--text-color);
       text-decoration: underline;
     }
   }

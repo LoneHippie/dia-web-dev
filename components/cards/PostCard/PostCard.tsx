@@ -6,9 +6,10 @@ import classes from "./PostCard.module.scss";
 
 interface Props {
   post: Post;
+  isHeaderClashing?: boolean;
 }
 
-const PostCard = ({ post }: Props) => {
+const PostCard = ({ post, isHeaderClashing = false }: Props) => {
   const { formattedDate } = useFormatDate(post.postDate);
 
   return (
@@ -22,10 +23,16 @@ const PostCard = ({ post }: Props) => {
           src={post.coverImage.url}
         />
         <div className={classes.card__info}>
-          <span className={classes.card__info__date}>
+          <span
+            style={isHeaderClashing ? { color: "#e1e1e1" } : {}}
+            className={classes.card__info__date}
+          >
             {formattedDate}
           </span>
-          <h3 className={classes.card__info__title}>
+          <h3
+            style={isHeaderClashing ? { color: "#ffffff" } : {}}
+            className={classes.card__info__title}
+          >
             {post.title}
           </h3>
         </div>
