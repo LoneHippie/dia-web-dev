@@ -10,6 +10,12 @@ const fullPostContent = `
     url
   }
   isFeatured
+  postAuthor {
+    name
+    image {
+      url
+    }
+  }
 `;
 
 const allPostsQuery = () => `

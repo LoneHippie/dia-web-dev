@@ -15,14 +15,20 @@ const ArticleView = ({ post }: Props) => {
 
   return (
     <Layout
-      HeroTextComponent={() => (
-        <HeroTitle h1={post.title} h2={formattedDate} />
-      )}
+      HeroTextComponent={() => <HeroTitle h1={post.title} />}
     >
       <img
         className={classes.coverImage}
         src={post.coverImage.url}
       />
+
+      <div className={classes.metaInfo}>
+        <img src={post.postAuthor.image.url} />
+        <div className={classes.metaInfo__text}>
+          <h2>{post.postAuthor.name}</h2>
+          <span>{formattedDate}</span>
+        </div>
+      </div>
 
       <PostContent markdown={post.postContent} />
     </Layout>

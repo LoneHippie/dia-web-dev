@@ -12,6 +12,13 @@ export type SinglePostQuery = ({
   slug
 }: SinglePostQueryArgs) => string;
 
+interface Author {
+  name: string;
+  image: {
+    url: string;
+  };
+}
+
 export interface Post {
   title: string;
   slug: string;
@@ -22,6 +29,7 @@ export interface Post {
   };
   preview: string;
   isFeatured: boolean;
+  postAuthor: Author;
 }
 
 export interface ContentfulData {
