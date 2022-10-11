@@ -22,6 +22,10 @@ const useLayout = () => {
       name: "Articles"
     },
     {
+      path: "/resources",
+      name: "Resources"
+    },
+    {
       path: "/about",
       name: "About"
     }
